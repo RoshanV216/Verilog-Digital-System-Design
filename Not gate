@@ -1,0 +1,38 @@
+// Code your design here
+`timescale 1ns / 1ps
+
+module gates(
+input a,
+output y
+    );
+    
+    assign y = ~a;
+    
+endmodule
+
+// Code your testbench here
+// or browse Examples
+`timescale 1ns / 1ps
+
+module tb_gates(
+
+    );
+    
+    reg a;
+    wire y;
+    
+    gates uut(a,y);
+    
+    initial begin
+    a=0;
+    #10
+    a=1;
+    #10
+    a=0;
+    #5
+    a=1;
+    #5
+    #10
+    $finish;
+    end
+endmodule 
